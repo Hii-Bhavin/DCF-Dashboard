@@ -172,15 +172,27 @@ if all([total_shares, profit, fcf_cagr, FCF, market_cap]):
     with col1:
         col10, col11 = st.columns(2)
         with col10:
-            st.markdown(f"<h4 style='text-align:center; margin-bottom:0;'>🤑 Share Price</h4>", unsafe_allow_html=True)
-            st.markdown(f"<h4 style='text-align:center; margin-bottom:0;'>Market Cap.</h4>", unsafe_allow_html=True)
+            st.markdown(f"<h4 style='text-align:center; margin-bottom:0;'>🗠 Share Price</h4>", unsafe_allow_html=True)
+            st.markdown(f"<h4 style='text-align:center; margin-bottom:0;'>💰 Market Cap.</h4>", unsafe_allow_html=True)
+            st.markdown(f"<h4 style='text-align:center; margin-bottom:0;'>🫙 Category</h4>", unsafe_allow_html=True)
 
         with col11:
             st.markdown(f"<p style='font-size:24px; text-align:center; margin:7px 0;'>₹{current_price:.0f}</p>", unsafe_allow_html=True)
-            if market_cap >= 100000:
+            if market_cap >= 900000:
                 st.markdown(f"<p style='font-size:24px; text-align:center; margin:8px 0;'>₹{market_cap/100000:.1f}L Cr.</p>", unsafe_allow_html=True)
-            else:
-                st.markdown(f"<p style='font-size:24px; text-align:center; margin:11px 0;'>₹{market_cap/1000:.0f}K Cr.</p>", unsafe_allow_html=True)
+                st.markdown(f"<p style='font-size:24px; text-align:center; margin:8px 0;'>Mega-Cap</p>", unsafe_allow_html=True)
+            elif market_cap >= 100000 and market_cap < 900000:
+                st.markdown(f"<p style='font-size:24px; text-align:center; margin:8px 0;'>₹{market_cap/100000:.1f}L Cr.</p>", unsafe_allow_html=True)
+                st.markdown(f"<p style='font-size:24px; text-align:center; margin:8px 0;'>Large-Cap</p>", unsafe_allow_html=True)
+            elif market_cap >= 30000 and market_cap < 100000:
+                st.markdown(f"<p style='font-size:24px; text-align:center; margin:8px 0;'>₹{market_cap/1000:.0f}K Cr.</p>", unsafe_allow_html=True)
+                st.markdown(f"<p style='font-size:24px; text-align:center; margin:8px 0;'>Mid-Cap</p>", unsafe_allow_html=True)
+            elif market_cap >= 5000 and market_cap < 30000:
+                st.markdown(f"<p style='font-size:24px; text-align:center; margin:8px 0;'>₹{market_cap/1000:.0f}K Cr.</p>", unsafe_allow_html=True)
+                st.markdown(f"<p style='font-size:24px; text-align:center; margin:8px 0;'>Small-Cap</p>", unsafe_allow_html=True)
+            elif market_cap >= 100 and market_cap < 5000:
+                st.markdown(f"<p style='font-size:24px; text-align:center; margin:8px 0;'>₹{market_cap:.0f} Cr.</p>", unsafe_allow_html=True)
+                st.markdown(f"<p style='font-size:24px; text-align:center; margin:8px 0;'>Micro-Cap</p>", unsafe_allow_html=True)
 
     with col2:
         st.subheader("📊 Projected Free Cash Flows")
@@ -548,3 +560,4 @@ if all([total_shares, profit, fcf_cagr, FCF, market_cap]):
 
 else:
     st.warning("⚠️ Could not fetch all required data (e.g., total shares, profit). Please check the ticker symbol and try again.")
+
