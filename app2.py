@@ -17,7 +17,7 @@ st.title("📈 Warren's Fair Value Estimator")
 # --- Input Section ---
 col1, col2 = st.columns([2, 2])
 with col1:
-    st.markdown("<div style='padding-top: 200px;'></div>", unsafe_allow_html=True)
+    st.markdown("<div style='padding-top: 50px;'></div>", unsafe_allow_html=True)
     ticker = st.text_input("Enter Ticker:", value="TCS").strip().upper()
     years = st.selectbox("Time Period:", options=[5, 10], index=0)
     discount = st.number_input("Discount Rate (%)", value=6.5, min_value=0.0, max_value=100.0) / 100
@@ -560,4 +560,5 @@ if all([total_shares, profit, fcf_cagr, FCF, market_cap]):
 
 else:
     st.warning("⚠️ Could not fetch all required data (e.g., total shares, profit). Please check the ticker symbol and try again.")
+
 
