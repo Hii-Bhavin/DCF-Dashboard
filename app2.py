@@ -17,7 +17,27 @@ st.title("📈 Warren's Fair Value Estimator")
 # --- Input Section ---
 col1, col2 = st.columns([2, 2])
 with col1:
-    st.markdown("<div style='padding-top: 50px;'></div>", unsafe_allow_html=True)
+    st.markdown("""<div style="padding-top:20px;"></div>""", unsafe_allow_html=True)
+
+    # Add beautiful button-style link
+    st.markdown("""
+        <div style="margin-bottom: 20px;">
+            <a href="https://msm-dcf.streamlit.app/" target="_blank" style="
+                text-decoration: none;
+                background-color: #4CAF50;
+                color: white;
+                padding: 12px 22px;
+                border-radius: 6px;
+                display: inline-block;
+                font-weight: 600;
+                font-size: 15px;
+                box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+                transition: background-color 0.3s ease;
+            " onmouseover="this.style.backgroundColor='#45a049'" onmouseout="this.style.backgroundColor='#4CAF50'">
+                👉 Want a Precise Analysis for Indian Stocks?
+            </a>
+        </div>
+    """, unsafe_allow_html=True)
     ticker = st.text_input("Enter Ticker:", value="TCS").strip().upper()
     years = st.selectbox("Time Period:", options=[5, 10], index=0)
     discount = st.number_input("Discount Rate (%)", value=6.5, min_value=0.0, max_value=100.0) / 100
@@ -560,5 +580,6 @@ if all([total_shares, profit, fcf_cagr, FCF, market_cap]):
 
 else:
     st.warning("⚠️ Could not fetch all required data (e.g., total shares, profit). Please check the ticker symbol and try again.")
+
 
 
