@@ -22,7 +22,7 @@ with col1:
     # Add beautiful button-style link
     st.markdown("""
         <div style="margin-bottom: 20px;">
-            <a href="https://msm-dcf.streamlit.app/" target="_blank" style="
+            <a href="https://Global-dcf.streamlit.app/" target="_blank" style="
                 text-decoration: none;
                 background-color: #4CAF50;
                 color: white;
@@ -580,6 +580,7 @@ if all([total_shares, profit, fcf_cagr, FCF, market_cap]):
 
 else:
     st.warning("⚠️ Could not fetch all required data (e.g., total shares, profit). Please check the ticker symbol and try again.")
+
 
 
 
