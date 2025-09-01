@@ -34,7 +34,7 @@ with col1:
                 box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
                 transition: background-color 0.3s ease;
             " onmouseover="this.style.backgroundColor='#45a049'" onmouseout="this.style.backgroundColor='#4CAF50'">
-                👉 Want a Precise Analysis for Indian Stocks?
+                👉 Want a Precise Analysis for Global Stocks?
             </a>
         </div>
     """, unsafe_allow_html=True)
@@ -580,6 +580,7 @@ if all([total_shares, profit, fcf_cagr, FCF, market_cap]):
 
 else:
     st.warning("⚠️ Could not fetch all required data (e.g., total shares, profit). Please check the ticker symbol and try again.")
+
 
 
 
